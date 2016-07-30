@@ -123,8 +123,8 @@ If you don't want to use this package to parse variable types, you could also us
 [slack-image]: http://slack.crocodilejs.com/badge.svg
 [slack-url]: http://slack.crocodilejs.com
 [dotenv]: https://github.com/motdotla/dotenv
-[dotenv-extended]: https://github.com/motdotla/dotenv-expand
-[dotenv-expand]: https://github.com/keithmorris/node-dotenv-extended
+[dotenv-expand]: https://github.com/motdotla/dotenv-expand
+[dotenv-extended]: https://github.com/keithmorris/node-dotenv-extended
 [getenv]: https://github.com/ctavan/node-getenv
 [build-image]: https://semaphoreci.com/api/v1/niftylettuce/dotenv-parse-variables/branches/master/shields_badge.svg
 [build-url]: https://semaphoreci.com/niftylettuce/dotenv-parse-variables
