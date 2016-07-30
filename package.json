@@ -1,0 +1,49 @@
+{
+  "name": "dotenv-parse-variables",
+  "description": "Parse dotenv files for Boolean, Array, and Number variable types, built for CrocodileJS",
+  "version": "0.0.1",
+  "author": "Nick Baugh <niftylettuce@gmail.com>",
+  "bugs": "https://github.com/niftylettuce/dotenv-parse-variables/issues",
+  "dependencies": {
+    "debug": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-preset-crocodile": "^1.0.0",
+    "chai": "^3.5.0",
+    "codecov": "^1.0.1",
+    "dirty-chai": "^1.2.2",
+    "dotenv": "^2.0.0",
+    "eslint-config-crocodile": "^1.0.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^2.5.3"
+  },
+  "engines": {
+    "node": ">= 6.x"
+  },
+  "homepage": "https://github.com/niftylettuce/dotenv-parse-variables",
+  "keywords": [
+    "parse",
+    "variables",
+    "dotenv",
+    "dot",
+    "env",
+    "convert",
+    "boolean",
+    "array",
+    "number",
+    "check"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": "niftylettuce/dotenv-parse-variables",
+  "scripts": {
+    "compile": "rm -rf lib/ && babel -d lib src",
+    "lint": "eslint .",
+    "prepublish": "npm run test",
+    "test": "npm run lint && npm run compile && npm run coverage",
+    "analyze-coverage": "node_modules/.bin/babel-node node_modules/.bin/istanbul cover node_modules/.bin/_mocha",
+    "check-coverage": "node_modules/.bin/babel-node node_modules/.bin/istanbul check-coverage",
+    "coverage": "rm -rf coverage/ && npm run analyze-coverage && npm run check-coverage && node_modules/.bin/codecov"
+  }
+}
