@@ -90,11 +90,11 @@ console.log(env);
 > Example with `dotenv-extended` (which supports a well-defined `.env` file) and `dotenv-expand` (which supports variable interpolation):
 
 ```js
-import dotenvExtended from 'dotenv-extended';
+import { load } from 'dotenv-extended';
 import dotenvExpand from 'dotenv-expand';
 import dotenvParseVariables from 'dotenv-parse-variables';
 
-let env = dotenvExtended.config({
+let env = load({
   silent: false,
   errorOnMissing: true,
   errorOnExtra: true
