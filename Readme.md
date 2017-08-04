@@ -78,10 +78,11 @@ This package works just fine with [dotenv][dotenv], however we also recommend to
 > Example with `dotenv`:
 
 ```js
-import dotenv from 'dotenv';
-import dotenvParseVariables from 'dotenv-parse-variables';
+const dotenv = require('dotenv');
+const dotenvParseVariables = require('dotenv-parse-variables');
 
-let env = dotenv.config({});
+let env = dotenv.config({})
+if (env.error) throw env.error;
 env = dotenvParseVariables(env);
 
 console.log(env);
@@ -90,9 +91,9 @@ console.log(env);
 > Example with `dotenv-extended` (which supports a well-defined `.env` file) and `dotenv-expand` (which supports variable interpolation):
 
 ```js
-import dotenvExtended from 'dotenv-extended';
-import dotenvMustache from 'dotenv-mustache';
-import dotenvParseVariables from 'dotenv-parse-variables';
+const dotenvExtended = require('dotenv-extended');
+const dotenvMustache = require('dotenv-mustache');
+const dotenvParseVariables = require('dotenv-parse-variables');
 
 let env = dotenvExtended.load({
   silent: false,
