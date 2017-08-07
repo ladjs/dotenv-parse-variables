@@ -7,8 +7,8 @@ import expectedEnv from '../fixtures/env';
 let env = dotenv.config({
   path: path.join(global.fixturesDir, '.env')
 });
-
-env = dotenvParseVariables(env);
+if (env.error) throw env.error;
+env = dotenvParseVariables(env.parsed);
 
 describe('dotenv-parse-variables', () => {
 
