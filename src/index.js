@@ -19,11 +19,11 @@ function parseKey(value, key) {
 
   debug(`parsing key ${key} with value ${value}`);
 
-  // if the value is wrapped in double bacticks e.g. (``value``) then just return its value
-  if (value.toString().startsWith('``') && value.toString().endsWith('``')
-    && value.toString().length >= 4) {
-    debug(`key ${key} is wrapped in double bacticks and will be ignored from parsing`);
-    return value.toString().substring(2, value.toString().length - 2);
+  // if the value is wrapped in bacticks e.g. (`value`) then just return its value
+  if (value.toString().indexOf('`') === 0 
+    && value.toString().lastIndexOf('`') === value.toString().length - 1) {
+    debug(`key ${key} is wrapped in bacticks and will be ignored from parsing`);
+    return value.toString().substring(1, value.toString().length - 1);
   }
 
   // if the value ends in an asterisk then just return its value
