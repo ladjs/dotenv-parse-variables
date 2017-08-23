@@ -4,5 +4,6 @@ module.exports = {
   BEEP: false,
   BOOP: [ 'some', 'thing', 'that', 'goes', 'wow' ],
   BLEEP: 'false',
-  PING: [ 'ping', 'true', 2, 100 ]
+  PING: [ 'ping', 'true', 2, 100 ],
+  PONG: 'some,thing,that,goes,wow'
 };
