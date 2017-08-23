@@ -19,10 +19,10 @@ function parseKey(value, key) {
 
   debug(`parsing key ${key} with value ${value}`);
 
-  // if the value is wrapped in double quotes e.g. (""value"") then just return its value
-  if (value.toString().startsWith('""') && value.toString().endsWith('""')
+  // if the value is wrapped in double bacticks e.g. (``value``) then just return its value
+  if (value.toString().startsWith('``') && value.toString().endsWith('``')
     && value.toString().length >= 4) {
-    debug(`key ${key} is wrapped in double quotes and will be ignored from parsing`);
+    debug(`key ${key} is wrapped in double bacticks and will be ignored from parsing`);
     return value.toString().substring(2, value.toString().length - 2);
   }
 
