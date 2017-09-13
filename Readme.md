@@ -1,6 +1,8 @@
 
 # dotenv-parse-variables
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/niftylettuce/dotenv-parse-variables.svg)](https://greenkeeper.io/)
+
 [![Slack Status][slack-image]][slack-url]
 [![NPM version][npm-image]][npm-url]
 [![Build Status][build-image]][build-url]
