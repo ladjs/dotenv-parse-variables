@@ -6,21 +6,21 @@ const debug = new Debug('dotenv-parse-variables');
 const DEFAULT_OPTIONS = {
   assignToProcessEnv: true,
   overrideProcessEnv: false
-}
- 
+};
+
 export default (env, options) => {
-  const envOptions = Object.assign({}, DEFAULT_OPTIONS, options || {})
+  const envOptions = Object.assign({}, DEFAULT_OPTIONS, options || {});
 
   Object.keys(env).forEach(key => {
     debug(`key "${key}" before type was ${typeof env[key]}`);
     env[key] = parseKey(env[key], key);
     debug(`key "${key}" after type was ${typeof env[key]}`);
-    
+
     if (envOptions.assignToProcessEnv === true) {
       if (envOptions.overrideProcessEnv === true) {
-        process.env[key] = env[key] || process.env[key]
+        process.env[key] = env[key] || process.env[key];
       } else {
-        process.env[key] = process.env[key] || env[key]
+        process.env[key] = process.env[key] || env[key];
       }
     }
   });
