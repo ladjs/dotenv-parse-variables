@@ -48,4 +48,10 @@ describe('dotenv-parse-variables', () => {
     expect(process.env.HTTP_PROXY).to.not.equal(TEST_PROXY);
   });
 
+  it('should retain its type when setting the process.env', () => {
+    process.env.HTTP_PROXY = TEST_PROXY;
+    env = dotenvParseVariables(env.parsed);
+    expect(process.env.BOOP).to.equal(env.BOOP);
+  });
+
 });
