@@ -50,7 +50,7 @@ function parseKey(value, key) {
   // Boolean
   if (value.toString().toLowerCase() === 'true' || value.toString().toLowerCase() === 'false') {
     debug(`key ${key} parsed as a Boolean`);
-    return value === 'true';
+    return value.toString().toLowerCase() === 'true';
   }
 
   // Number

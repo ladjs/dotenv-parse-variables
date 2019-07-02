@@ -5,19 +5,19 @@
   "author": "Nick Baugh <niftylettuce@gmail.com>",
   "bugs": "https://github.com/niftylettuce/dotenv-parse-variables/issues",
   "dependencies": {
-    "debug": "^3.1.0"
+    "debug": "^4.1.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
     "babel-preset-crocodile": "^1.0.0",
-    "chai": "^4.1.1",
-    "codecov": "^3.0.2",
+    "chai": "^4.2.0",
+    "codecov": "^3.5.0",
     "dirty-chai": "^2.0.1",
-    "dotenv": "^5.0.1",
+    "dotenv": "^8.0.0",
     "eslint-config-crocodile": "^1.0.0",
     "istanbul": "^1.1.0-alpha.1",
-    "mocha": "^5.2.0"
+    "mocha": "^6.1.4"
   },
   "engines": {
     "node": ">= 6.x"
