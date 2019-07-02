@@ -48,7 +48,7 @@ function parseKey(value, key) {
   }
 
   // Boolean
-  if (value.toLowerCase() === 'true' || value.toLowerCase() === 'false') {
+  if (value.toString().toLowerCase() === 'true' || value.toString().toLowerCase() === 'false') {
     debug(`key ${key} parsed as a Boolean`);
     return value === 'true';
   }
