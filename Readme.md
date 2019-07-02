@@ -38,10 +38,10 @@ PONG=`some,thing,that,goes,wow`
 
 After using this plugin, the environment variables are parsed to their proper types.
 
-To test it out, simply log the `process.env` in your console:
+To test it out, simply log the returned object in your console:
 
 ```js
-console.log(process.env);
+console.log(env);
 ```
 
 And you'll see that it outputs the properly parsed variable types:
