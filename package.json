@@ -1,7 +1,7 @@
 {
   "name": "dotenv-parse-variables",
   "description": "Parse dotenv files for Boolean, Array, and Number variable types, built for CrocodileJS",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "Nick Baugh <niftylettuce@gmail.com>",
   "bugs": "https://github.com/niftylettuce/dotenv-parse-variables/issues",
   "dependencies": {
