@@ -6,5 +6,6 @@ module.exports = {
   BLEEP: 'false',
   PING: [ 'ping', 'true', 2, 100 ],
   PONG: 'some,thing,that,goes,wow',
-  HTTP_PROXY: 'proxy.domain.com:8080'
+  HTTP_PROXY: 'proxy.domain.com:8080',
+  AWS_ACCESS_KEY_ID: '123'
 };
