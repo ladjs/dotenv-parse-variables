@@ -2,6 +2,7 @@ module.exports = {
   FOO: 'bar',
   BAZ: 2,
   BEEP: false,
+  ARR: [ 'single' ],
   BOOP: [ 'some', 'thing', 'that', 'goes', 'wow' ],
   BLEEP: 'false',
   PING: [ 'ping', 'true', 2, 100 ],

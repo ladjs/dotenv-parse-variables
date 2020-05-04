@@ -63,7 +63,9 @@ function parseKey(value, key) {
   // Array
   if (value.indexOf(',') !== -1) {
     debug(`key ${key} parsed as an Array`);
-    return value.split(',').map(parseKey);
+    return value.split(',').filter(function (str) {
+      return str !== '';
+    }).map(parseKey);
   }
 
   return value;
