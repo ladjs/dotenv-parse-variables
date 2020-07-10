@@ -124,8 +124,8 @@ If you don't want to use this package to parse variable types, you could also us
 [crocodile-url]: https://crocodilejs.com
 [standard-image]: https://img.shields.io/badge/code%20style-standard%2Bes7-brightgreen.svg
 [standard-url]: https://github.com/crocodilejs/eslint-config-crocodile
-[slack-image]: https://slack.crocodilejs.com/badge.svg
-[slack-url]: https://slack.crocodilejs.com
+[slack-image]: https://img.shields.io/badge/chat-join%20slack-brightgreen
+[slack-url]: https://join.slack.com/t/ladjs/shared_invite/zt-fqei6z11-Bq2trhwHQxVc5x~ifiZG0g
 [dotenv]: https://github.com/motdotla/dotenv
 [dotenv-expand]: https://github.com/motdotla/dotenv-expand
 [dotenv-extended]: https://github.com/keithmorris/node-dotenv-extended
