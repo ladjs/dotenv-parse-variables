@@ -91,6 +91,29 @@ env = dotenvParseVariables(env.parsed);
 console.log(env);
 ```
 
+> Example with `dotenv` in typescript:
+
+```ts
+const dotenv = require('dotenv');
+const dotenvParseVariables = require('dotenv-parse-variables');
+
+// Because the .env variables don't exist on the `dotenv.DotenvConfigOutput` type you'll receive an error of
+// `Property '...' does not exist on type 'DotenvConfigOutput'`. To get around this you can define env as
+// an `any` type.
+let env: any = dotenv.config({})
+
+if (env.error) throw env.error;
+
+// Note that if you do not assure that parsed via a truthy or `env.parsed !== undefined`
+// the typescript compiler will throw an error of:
+// `Type 'undefined' is not assignable to type 'Record<string, string>'`
+if(env.parsed){
+  env = dotenvParseVariables(env.parsed);
+}
+
+console.log(env);
+```
+
 > Example with `dotenv-extended` (which supports a well-defined `.env` file) and `dotenv-expand` (which supports variable interpolation):
 
 ```js
