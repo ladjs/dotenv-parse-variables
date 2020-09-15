@@ -7,7 +7,7 @@
     "serial": true
   },
   "bugs": {
-    "url": "https://github.com/niftylettuce/dotnenv-parse-variables/issues",
+    "url": "https://github.com/niftylettuce/dotenv-parse-variables/issues",
     "email": "niftylettuce@gmail.com"
   },
   "commitlint": {
@@ -98,7 +98,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/niftylettuce/dotnenv-parse-variables"
+    "url": "https://github.com/niftylettuce/dotenv-parse-variables"
   },
   "scripts": {
     "ava": "cross-env NODE_ENV=test ava",
