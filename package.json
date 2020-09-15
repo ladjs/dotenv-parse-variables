@@ -3,26 +3,59 @@
   "description": "Parse dotenv files for Boolean, Array, and Number variable types, built for CrocodileJS",
   "version": "0.3.1",
   "author": "Nick Baugh <niftylettuce@gmail.com>",
-  "bugs": "https://github.com/niftylettuce/dotenv-parse-variables/issues",
+  "ava": {
+    "serial": true
+  },
+  "bugs": {
+    "url": "https://github.com/niftylettuce/dotnenv-parse-variables/issues",
+    "email": "niftylettuce@gmail.com"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "contributors": [
+    "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com)"
+  ],
   "dependencies": {
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "is-string-and-not-blank": "^0.0.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-add-module-exports": "^1.0.2",
-    "babel-preset-crocodile": "^1.0.0",
-    "chai": "^4.2.0",
-    "codecov": "^3.6.5",
-    "dirty-chai": "^2.0.1",
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
+    "ava": "^3.12.1",
+    "codecov": "^3.7.2",
+    "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
-    "eslint-config-crocodile": "^1.0.0",
-    "istanbul": "^1.1.0-alpha.1",
-    "mocha": "^6.1.4"
+    "eslint": "^7.8.1",
+    "eslint-config-xo-lass": "^1.0.3",
+    "eslint-plugin-node": "^11.1.0",
+    "fixpack": "^3.0.6",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "nyc": "^15.1.0",
+    "remark-cli": "^8.0.1",
+    "remark-preset-github": "^3.0.0",
+    "xo": "^0.33.1"
   },
   "engines": {
-    "node": ">= 6.x"
+    "node": ">= 8.3.0"
   },
+  "files": [
+    "lib"
+  ],
   "homepage": "https://github.com/niftylettuce/dotenv-parse-variables",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "keywords": [
     "array",
     "boolean",
@@ -36,15 +69,53 @@
     "variables"
   ],
   "license": "MIT",
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "xo --fix",
+        "git add"
+      ],
+      "*.md": [
+        "remark . -qfo",
+        "git add"
+      ],
+      "package.json": [
+        "fixpack",
+        "git add"
+      ]
+    }
+  },
   "main": "lib/index.js",
-  "repository": "niftylettuce/dotenv-parse-variables",
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "none"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-github"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/niftylettuce/dotnenv-parse-variables"
+  },
   "scripts": {
-    "analyze-coverage": "node_modules/.bin/babel-node node_modules/.bin/istanbul cover node_modules/.bin/_mocha",
-    "check-coverage": "node_modules/.bin/babel-node node_modules/.bin/istanbul check-coverage",
-    "compile": "rm -rf lib/ && babel -d lib src",
-    "coverage": "rm -rf coverage/ && npm run analyze-coverage && npm run check-coverage && node_modules/.bin/codecov",
-    "lint": "eslint .",
-    "prepublish": "npm run test",
-    "test": "npm run lint && npm run compile && npm run coverage"
+    "ava": "cross-env NODE_ENV=test ava",
+    "build": "npm run build:clean && npm run build:lib",
+    "build:clean": "rimraf lib",
+    "build:lib": "babel src --out-dir lib",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "lint": "xo && remark . -qfo && eslint lib",
+    "nyc": "cross-env NODE_ENV=test nyc ava",
+    "test": "npm run build && npm run lint && npm run ava",
+    "test-coverage": "npm run build && npm run lint && npm run nyc"
+  },
+  "xo": {
+    "prettier": true,
+    "space": true,
+    "extends": [
+      "xo-lass"
+    ]
   }
 }
