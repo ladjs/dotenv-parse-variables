@@ -26,9 +26,9 @@ module.exports = (env, options) => {
       debug(`key "${key}" after type was ${typeof parsed[key]}`);
       if (envOptions.assignToProcessEnv === true) {
         if (envOptions.overrideProcessEnv === true) {
-          process.env[key] = parsed[key] || process.env[key];
+          process.env[key] = (parsed[key] != null) ? parsed[key] : process.env[key];
         } else {
-          process.env[key] = process.env[key] || parsed[key];
+          process.env[key] = (process.env[key] != null) ? process.env[key] : parsed[key];
         }
       }
     }
