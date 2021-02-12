@@ -19,29 +19,29 @@
     "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com)"
   ],
   "dependencies": {
-    "debug": "^4.1.1",
+    "debug": "^4.3.1",
     "is-string-and-not-blank": "^0.0.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@commitlint/cli": "^9.1.2",
-    "@commitlint/config-conventional": "^9.1.2",
-    "ava": "^3.12.1",
-    "codecov": "^3.7.2",
-    "cross-env": "^7.0.2",
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "ava": "^3.15.0",
+    "codecov": "^3.8.1",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
-    "eslint": "^7.8.1",
-    "eslint-config-xo-lass": "^1.0.3",
+    "eslint": "^7.19.0",
+    "eslint-config-xo-lass": "^1.0.5",
     "eslint-plugin-node": "^11.1.0",
-    "fixpack": "^3.0.6",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.3.0",
+    "fixpack": "^4.0.0",
+    "husky": "^5.0.9",
+    "lint-staged": "^10.5.4",
     "nyc": "^15.1.0",
-    "remark-cli": "^8.0.1",
-    "remark-preset-github": "^3.0.0",
-    "xo": "^0.33.1"
+    "remark-cli": "^9.0.0",
+    "remark-preset-github": "^4.0.1",
+    "xo": "^0.37.1"
   },
   "engines": {
     "node": ">= 8.3.0"

@@ -14,22 +14,20 @@ module.exports = (env, options) => {
 
   for (const key of Object.keys(env)) {
     debug(`key "${key}" before type was ${typeof env[key]}`);
-    if (env[key]) {
-      if (envOptions.ignoreFunctions && typeof env[key] === 'function') {
-        debug(
-          `key "${key}" was a function so it is being ignored due to ignoreFunctions: true`
-        );
-        continue;
-      }
+    if (envOptions.ignoreFunctions && typeof env[key] === 'function') {
+      debug(
+        `key "${key}" was a function so it is being ignored due to ignoreFunctions: true`
+      );
+      continue;
+    }
 
-      parsed[key] = parseKey(env[key], key);
-      debug(`key "${key}" after type was ${typeof parsed[key]}`);
-      if (envOptions.assignToProcessEnv === true) {
-        if (envOptions.overrideProcessEnv === true) {
-          process.env[key] = parsed[key] || process.env[key];
-        } else {
-          process.env[key] = process.env[key] || parsed[key];
-        }
+    parsed[key] = parseKey(env[key], key);
+    debug(`key "${key}" after type was ${typeof parsed[key]}`);
+    if (envOptions.assignToProcessEnv === true) {
+      if (envOptions.overrideProcessEnv === true) {
+        process.env[key] = parsed[key] || process.env[key];
+      } else {
+        process.env[key] = process.env[key] || parsed[key];
       }
     }
   }
@@ -82,7 +80,7 @@ function parseKey(value, key) {
     debug(`key ${key} parsed as an Array`);
     return value
       .split(',')
-      .filter(function (string) {
+      .filter((string) => {
         return string !== '';
       })
       .map((string) => parseKey(string));

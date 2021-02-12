@@ -145,7 +145,7 @@ The defaults are listed below:
 [MIT](LICENSE) © Nick Baugh
 
 
-## 
+##
 
 [lad]: https://lad.js.org
 
